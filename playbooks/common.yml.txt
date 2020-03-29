@@ -1,0 +1,12 @@
+---
+- name: install initial packages
+  hosts: all
+  remote_user: ansible
+  become: yes
+
+  tasks:
+  - name: install initial packages
+    yum:
+      name: ['man', 'man-pages', 'mlocate', 'vim', 'bind-utils']
+      state: present
+
